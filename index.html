@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>margin calculator</title>
+  </head>
+
+  <body>
+    <section>
+      <a href="index2.html">older version</a> <br />
+      <label for="totalLabel">total: </label><br />
+      <input type="text" id="totalId" name="totalName" /><br /><br />
+
+      <label for="specifiedMoneyLabel">specified Money: </label><br />
+      <input
+        type="text"
+        id="specifiedMoneyId"
+        name="specifiedMoneyName"
+      /><br /><br />
+
+      <label for="riskLabel">risk: </label><br />
+      <input type="text" id="riskId" name="riskName" /><br /><br />
+
+      <label for="rewardLabel">reward: </label><br />
+      <input type="text" id="rewardId" name="rewardName" /><br /><br />
+
+      <label for="leverageLabel">leverage: </label><br />
+      <input type="text" id="leverageId" name="leverageName" /><br /><br />
+
+      <label for="fractionLabel">fraction: </label><br />
+      <input
+        type="text"
+        id="fractionId"
+        name="fractionName"
+        value="7"
+      /><br /><br />
+      <button style="color: black" type="button" onclick="calculate()">
+        calculate!</button
+      ><br />
+      <hr />
+
+      <p style="display: inline">your margin must be less than</p>
+      <p id="lessThanId"></p>
+      <p style="display: inline">
+        in worst case scenario , yout loss is gonna be
+      </p>
+      <p id="worstId"></p>
+      <p style="display: inline">
+        in best case scenario , your reward is gonna be about
+      </p>
+      <p id="bestId"></p>
+    </section>
+
+    <script>
+      function calculate() {
+        //inputs
+        var total = document.getElementById("totalId").value;
+        var risk = document.getElementById("riskId").value;
+        var reward = document.getElementById("rewardId").value;
+        var leverage = document.getElementById("leverageId").value;
+        var specifiedMoney = document.getElementById("specifiedMoneyId").value;
+        var fraction = document.getElementById("fractionId").value;
+        //outputs
+        var margin = calcMargin(specifiedMoney, risk, leverage);
+        var loss = (margin * risk * leverage) / 100;
+        var recommendedLoss = total / fraction;
+        var recommendedLeverage = finalLeverage(
+          specifiedMoney,
+          margin,
+          risk,
+          recommendedLoss
+        );
+        // }
+        //setting the paraghraphs
+        document.getElementById("lessThanId").innerHTML =
+          Number(margin).toFixed(2);
+        document.getElementById("worstId").innerHTML =
+          Number(loss).toFixed(2) +
+          " (recommended total risked money: " +
+          Number(recommendedLoss).toFixed(2) +
+          ", recommended leverage: " +
+          recommendedLeverage +
+          ")";
+        document.getElementById("bestId").innerHTML = Number(
+          (margin * reward * leverage) / 100
+        ).toFixed(2);
+      }
+      // functions
+      function finalLeverage(specifiedMoney, margin, risk, recommendedLoss) {
+        //   var firstLeverage, secondLeverage, thirdLeverage;
+        //   firstLeverage = calcLeverage(margin, risk, recommendedLoss);
+        //   secondLeverage = calcLeverage(
+        //     calcMargin(specifiedMoney, risk, firstLeverage),
+        //     risk,
+        //     recommendedLoss
+        //   );
+        //   thirdLeverage = calcLeverage(
+        //     calcMargin(specifiedMoney, risk, secondLeverage),
+        //     risk,
+        //     recommendedLoss
+        //   );
+        //   return thirdLeverage;
+        const leverageArray = [1, 2];
+        while (
+          leverageArray[leverageArray.length - 1] !=
+          leverageArray[leverageArray.length - 2]
+        ) {
+          newLeverage = calcLeverage(
+            calcMargin(
+              specifiedMoney,
+              risk,
+              leverageArray[leverageArray.length - 1]
+            ),
+            risk,
+            recommendedLoss
+          );
+          leverageArray.push(newLeverage);
+        }
+        return leverageArray[leverageArray.length - 1];
+      }
+      function calcLeverage(margin, risk, recommendedLoss) {
+        let i = 1;
+        while (1) {
+          if ((margin * risk * i) / 100 > recommendedLoss) break;
+          else i++;
+        }
+        return i;
+      }
+      function calcMargin(specifiedMoney, risk, leverage) {
+        return specifiedMoney / (1 + (risk / 100) * leverage);
+      }
+    </script>
+    <script href="script.js"></script>
+  </body>
+</html>
