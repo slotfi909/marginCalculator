@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>margin calculator</title>
+  </head>
+
+  <body>
+    <a href="index.html">version2</a>
+    <section>
+      <label for="totalLabel">total: </label><br />
+      <input type="text" id="totalId" name="totalName" /><br /><br />
+
+      <label for="riskLabel">risk: </label><br />
+      <input type="text" id="riskId" name="riskName" /><br /><br />
+
+      <label for="rewardLabel">reward: </label><br />
+      <input type="text" id="rewardId" name="rewardName" /><br /><br />
+
+      <label for="leverageLabel">leverage: </label><br />
+      <input type="text" id="leverageId" name="leverageName" /><br /><br />
+
+      <button type="button" onclick="calculate()">calculate!</button><br />
+      <hr />
+
+      <p style="display: inline">your margin must be less than</p>
+      <p id="lessThanId"></p>
+      <p></p>
+      <p style="display: inline">
+        in worst case scenario , yout loss is gonna be
+      </p>
+      <p id="worstId"></p>
+      <p></p>
+      <p style="display: inline">
+        in best case scenario , your reward is gonna be about
+      </p>
+      <p id="bestId"></p>
+      <p></p>
+    </section>
+
+    <script>
+      function calculate() {
+        var total = document.getElementById("totalId").value;
+        var risk = document.getElementById("riskId").value;
+        var reward = document.getElementById("rewardId").value;
+        var leverage = document.getElementById("leverageId").value;
+
+        var temp = total / (1 + (risk / 100) * leverage);
+
+        document.getElementById("lessThanId").innerHTML = temp;
+        document.getElementById("worstId").innerHTML =
+          (temp * risk * leverage) / 100;
+        document.getElementById("bestId").innerHTML =
+          (temp * reward * leverage) / 100;
+      }
+    </script>
+  </body>
+</html>
