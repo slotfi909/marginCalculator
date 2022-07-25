@@ -7,7 +7,7 @@ let's say you want to open a short poisiton
 
 ![alt text](https://github.com/slotfi909/marginCalculator/blob/main/images/img1.png?raw=true)
 
-now,you may want to know what this position will cost you(wheter it hit target price or stoploss)
+now,you may want to know what this position will cost you(whether it hit target price or stoploss)
 
 all you need to do is to plug the numbers into the site and it will tell you all the details you'll need from this position
 
