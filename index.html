@@ -85,6 +85,8 @@
           Number(recommendedLoss).toFixed(2) +
           ", recommended leverage: " +
           recommendedLeverage +
+          "-" +
+          (recommendedLeverage - 1) +
           ")";
         document.getElementById("bestId").innerHTML = Number(
           (margin * reward * leverage) / 100
