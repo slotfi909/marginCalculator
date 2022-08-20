@@ -82,7 +82,7 @@ input:checked + .slider:before {
   font-size: 13px;
   outline: 0;
   overflow: hidden;
-  padding: 0px 11px;
+  padding: 0px 10px;
   text-align: center;
   text-decoration: none;
   text-overflow: ellipsis;
