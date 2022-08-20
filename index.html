@@ -65,10 +65,18 @@
           name="fractionName"
           value="7"
         /><br /><br />
-        <button style="color: black" type="button" onclick="calculate() ">
-          calculate!</button
-        ><br />
-        <input type="submit" name="submit" value="Submit" />
+        <div id="buttons" style="text-align: center">
+          <button
+            class="button-14"
+            style="color: black"
+            type="button"
+            onclick="calculate() "
+          >
+            calculate!
+          </button>
+          <!-- <br /> -->
+          <input class="button-14" type="submit" name="submit" value="Submit" />
+        </div>
       </form>
       <hr />
 
@@ -96,6 +104,11 @@
           document.body.classList.remove("body_nightMode");
         }
       }
+    </script>
+    <script>
+      inp = document.getElementById("totalId");
+      inpWidth = String(inp.offsetWidth);
+      document.getElementById("buttons").style.width = inpWidth.concat("px");
     </script>
   </body>
 </html>
