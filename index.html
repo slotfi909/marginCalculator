@@ -23,49 +23,53 @@
       </label>
 
       <br />
-      <label
-        for="totalLabel"
-        title="the total amount of money deposited in your account"
-        >total: </label
-      ><br />
-      <input type="text" id="totalId" name="totalName" /><br /><br />
+      <form action="action.php" method="GET" autocomplete="off">
+        <label
+          for="totalLabel"
+          title="the total amount of money deposited in your account"
+          >total: </label
+        ><br />
+        <input type="text" id="totalId" name="totalName" /><br /><br />
 
-      <label
-        for="specifiedMoneyLabel"
-        title="the amount of money you want to specify to this position"
-        >specified Money: </label
-      ><br />
-      <input
-        type="text"
-        id="specifiedMoneyId"
-        name="specifiedMoneyName"
-      /><br /><br />
+        <label
+          for="specifiedMoneyLabel"
+          title="the amount of money you want to specify to this position"
+          >specified Money: </label
+        ><br />
+        <input
+          type="text"
+          id="specifiedMoneyId"
+          name="specifiedMoneyName"
+        /><br /><br />
 
-      <label for="riskLabel" title="risk(percentage)">risk: </label><br />
-      <input type="text" id="riskId" name="riskName" /><br /><br />
+        <label for="riskLabel" title="risk(percentage)">risk: </label><br />
+        <input type="text" id="riskId" name="riskName" /><br /><br />
 
-      <label for="rewardLabel" title="reward(percentage)">reward: </label><br />
-      <input type="text" id="rewardId" name="rewardName" /><br /><br />
+        <label for="rewardLabel" title="reward(percentage)">reward: </label
+        ><br />
+        <input type="text" id="rewardId" name="rewardName" /><br /><br />
 
-      <label for="leverageLabel" title="position's leverage">leverage: </label
-      ><br />
-      <input type="text" id="leverageId" name="leverageName" /><br /><br />
+        <label for="leverageLabel" title="position's leverage">leverage: </label
+        ><br />
+        <input type="text" id="leverageId" name="leverageName" /><br /><br />
 
-      <label
-        for="fractionLabel"
-        title="the fraction of your total money that you're willing to risk 
+        <label
+          for="fractionLabel"
+          title="the fraction of your total money that you're willing to risk 
         (example:7 would risk 1/7 of your total money)"
-        >fraction: </label
-      ><br />
-      <input
-        type="text"
-        id="fractionId"
-        name="fractionName"
-        value="7"
-      /><br /><br />
-      <button style="color: black" type="button" onclick="calculate()">
-        calculate!</button
-      ><br />
+          >fraction: </label
+        ><br />
+        <input
+          type="text"
+          id="fractionId"
+          name="fractionName"
+          value="7"
+        /><br /><br />
+        <button style="color: black" type="button" onclick="calculate() ">
+          calculate!</button
+        ><br />
+        <input type="submit" name="submit" value="Submit" />
+      </form>
       <hr />
 
       <p style="display: inline">your margin must be less than</p>
@@ -79,6 +83,7 @@
       </p>
       <p id="bestId"></p>
     </section>
+
     <script src="script.js"></script>
     <script>
       function checkNightMode() {
