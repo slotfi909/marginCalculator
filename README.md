@@ -30,6 +30,6 @@ you can change the numbers, see the different results, and go with the one which
 
 hope it'll help.
 
-whole project is up and running here: http://margin.gigfa.com/index.html
+<!-- whole project is up and running here: http://margin.gigfa.com/index.html  -->
 
 
