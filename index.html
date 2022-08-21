@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <meta charset="utf-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,69 +23,49 @@
       </label>
 
       <br />
-      <form action="action.php" method="GET" autocomplete="off">
-        <label
-          for="totalLabel"
-          title="the total amount of money deposited in your account"
-          >total: </label
-        ><br />
-        <input type="text" id="totalId" name="totalName" /><br /><br />
+      <label
+        for="totalLabel"
+        title="the total amount of money deposited in your account"
+        >total: </label
+      ><br />
+      <input type="text" id="totalId" name="totalName" /><br /><br />
 
-        <label
-          for="specifiedMoneyLabel"
-          title="the amount of money you want to specify to this position"
-          >specified Money: </label
-        ><br />
-        <input
-          type="text"
-          id="specifiedMoneyId"
-          name="specifiedMoneyName"
-        /><br /><br />
+      <label
+        for="specifiedMoneyLabel"
+        title="the amount of money you want to specify to this position"
+        >specified Money: </label
+      ><br />
+      <input
+        type="text"
+        id="specifiedMoneyId"
+        name="specifiedMoneyName"
+      /><br /><br />
 
-        <label for="riskLabel" title="risk(percentage)">risk: </label><br />
-        <input type="text" id="riskId" name="riskName" /><br /><br />
+      <label for="riskLabel" title="risk(percentage)">risk: </label><br />
+      <input type="text" id="riskId" name="riskName" /><br /><br />
 
-        <label for="rewardLabel" title="reward(percentage)">reward: </label
-        ><br />
-        <input type="text" id="rewardId" name="rewardName" /><br /><br />
+      <label for="rewardLabel" title="reward(percentage)">reward: </label><br />
+      <input type="text" id="rewardId" name="rewardName" /><br /><br />
 
-        <label for="leverageLabel" title="position's leverage">leverage: </label
-        ><br />
-        <input type="text" id="leverageId" name="leverageName" /><br /><br />
+      <label for="leverageLabel" title="position's leverage">leverage: </label
+      ><br />
+      <input type="text" id="leverageId" name="leverageName" /><br /><br />
 
-        <label
-          for="fractionLabel"
-          title="the fraction of your total money that you're willing to risk 
+      <label
+        for="fractionLabel"
+        title="the fraction of your total money that you're willing to risk 
         (example:7 would risk 1/7 of your total money)"
-          >fraction: </label
-        ><br />
-        <input
-          type="text"
-          id="fractionId"
-          name="fractionName"
-          value="7"
-        /><br /><br />
-        <div id="buttons">
-          <button
-            class="button-14"
-            style="color: black; width: 53%"
-            type="button"
-            title="calculate!"
-            onclick="calculate() "
-          >
-            calculate!
-          </button>
-          <!-- <br /> -->
-          <input
-            class="button-14"
-            type="submit"
-            name="submit"
-            value="Submit"
-            title="submit"
-            style="width: 44%"
-          />
-        </div>
-      </form>
+        >fraction: </label
+      ><br />
+      <input
+        type="text"
+        id="fractionId"
+        name="fractionName"
+        value="7"
+      /><br /><br />
+      <button style="color: black" type="button" onclick="calculate()">
+        calculate!</button
+      ><br />
       <hr />
 
       <p style="display: inline">your margin must be less than</p>
@@ -99,7 +79,6 @@
       </p>
       <p id="bestId"></p>
     </section>
-
     <script src="script.js"></script>
     <script>
       function checkNightMode() {
@@ -112,11 +91,6 @@
           document.body.classList.remove("body_nightMode");
         }
       }
-    </script>
-    <script>
-      inp = document.getElementById("totalId");
-      inpWidth = String(inp.offsetWidth);
-      document.getElementById("buttons").style.width = inpWidth.concat("px");
     </script>
   </body>
 </html>
