@@ -1,4 +1,3 @@
-<!--
 # marginCalculator
 a website to calculate margin,loss and profit for trades(crypto market,FOREX,etc..) 
 
@@ -12,7 +11,7 @@ now,you may want to know what this position will cost you(whether it hit target 
 
 all you need to do is to plug the numbers into the site and it will tell you all the details you'll need from this position
 
-![alt text](https://github.com/slotfi909/marginCalculator/blob/main/images/img2.png?raw=true)
+![Screenshot (41)](https://user-images.githubusercontent.com/82094903/185901203-6f03e17b-b662-4b1e-9c08-0ff8a16264bb.png)
 <details>
 <summary>for further information about the inputs click here</summary>
 <pre>
@@ -28,10 +27,8 @@ fraction: the fraction of your total money that you're willing to risk
 </details>
 
 you can change the numbers, see the different results, and go with the one which suits your risk management strategies best.
+by clicking the "submit" button, it will automatically save the input values in your dataset using object-oriented mysqli, but to use it, first you have to make some changes in the php file and add your own sql server address,username and password of the database,etc...
 
 hope it'll help.
--->
-fuck you
-<!-- whole project is up and running here: http://margin.gigfa.com/index.html  -->
 
 
