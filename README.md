@@ -1,3 +1,4 @@
+<!--
 # marginCalculator
 a website to calculate margin,loss and profit for trades(crypto market,FOREX,etc..) 
 
@@ -29,7 +30,8 @@ fraction: the fraction of your total money that you're willing to risk
 you can change the numbers, see the different results, and go with the one which suits your risk management strategies best.
 
 hope it'll help.
-
+-->
+fuck you
 <!-- whole project is up and running here: http://margin.gigfa.com/index.html  -->
 
 
